@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TrustFrameworkPolicy
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06"
+  PolicySchemaVersion="0.3.0.0"
+  TenantId="apntmb2c.onmicrosoft.com"
+  PolicyId="B2C_1A_TrustFrameworkExtensions"
+  PublicPolicyUri="http://yourtenant.onmicrosoft.com/B2C_1A_TrustFrameworkExtensions">
+
+  <BasePolicy>
+    <TenantId>apntmb2c.onmicrosoft.com</TenantId>
+    <PolicyId>B2C_1A_TrustFrameworkLocalization</PolicyId>
+  </BasePolicy>
+  <BuildingBlocks>
+
+  </BuildingBlocks>
+
+  <ClaimsProviders>
+
+
+    <ClaimsProvider>
+      <DisplayName>Local Account SignIn</DisplayName>
+      <TechnicalProfiles>
+         <TechnicalProfile Id="login-NonInteractive">
+          <Metadata>
+            <Item Key="client_id">ProxyIdentityExperienceFrameworkAppId</Item>
+            <Item Key="IdTokenAudience">IdentityExperienceFrameworkAppId</Item>
+          </Metadata>
+          <InputClaims>
+            <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="7bec729f-4a4c-4971-b0ce-c6310ecf59f2" />
+            <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="9c5d37e9-f332-4450-87cd-0f7ed1239efc" />
+          </InputClaims>
+        </TechnicalProfile>
+      </TechnicalProfiles>
+    </ClaimsProvider>
+
+  </ClaimsProviders>
+
+    <!--UserJourneys>
+
+	</UserJourneys-->
+
+</TrustFrameworkPolicy>
